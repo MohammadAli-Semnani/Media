@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf0f1;
+}
+.icons {
+  width: 550px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.icon-box {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.209);
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.icon-box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: -100%;
+  left: 50%;
+  transition: all 0.6s;
+}
+.icon-box:hover::before {
+  animation: upToDown 0.6s forwards;
+}
+
+.icon-box i {
+  font-size: 28px;
+  z-index: 1;
+  transition: all .6s;
+  cursor: pointer;
+}
+.instagram {
+  color:#c0062b; 
+}
+
+
+.twitter {
+    color: #1da1f2;
+}
+
+.spotify {
+    color: #1db954;
+}
+
+.youtube {
+    color: #ff0000;
+}
+
+.icon-box:hover i {
+  color: #fff;
+  transform: scale(1.4);
+}
+
+.instagram-box:hover::before {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.twitter-box:hover::before {
+  background-color: #1da1f2;
+}
+.spotify-box:hover::before {
+  background-color: #1db954;
+}
+.youtube-box:hover::before {
+  background-color: #ff0000;
+}
+
+@keyframes upToDown {
+  0% {
+    top: -100%;
+    left: 50%;
+  }
+  70% {
+    top: 20%;
+    left:-30%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
